@@ -56,13 +56,13 @@ function f4() {
     let out = '';
     while (i < ar4.length) {
         if (i === 0) {
-            out += `${ar4[i]} `
+            out += `${ar4[i]} `;
         } else if (i === 3) {
-            out += `${ar4[i]} `
+            out += `${ar4[i]} `;
         } else if (i === 8) {
-            out += `${ar4[i]} `
+            out += `${ar4[i]} `;
         }
-        i++
+        i++;
     }
     elem.textContent = out;
 }
