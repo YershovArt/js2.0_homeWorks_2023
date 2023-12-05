@@ -18,7 +18,7 @@ document.querySelector('.b-1').onclick = f1;
 function f2() {
     let a2 = [[12, 'hi'], [45, 87], [55, 13]];
     document.querySelector('.out-2').innerHTML = a2[0][1];
-    return a1[2][0];
+    return a2[0][1];
 }
 
 document.querySelector('.b-2').onclick = f2;
@@ -227,6 +227,7 @@ document.querySelector('.b-12').onclick = f12;
 let a13 = [];
 
 function f13() {
+    a13 = [];
     for (let i = 0; i < 8; i++) {
         a13.push([]);
         for (let k = 0; k < 8; k++) {
@@ -239,9 +240,8 @@ function f13() {
             } else if (i % 2 === 0 && k % 2 === 0) {
                 a13[i].push(0);
             }
-
         }
-
+        
     }
 
     console.log(a13);
@@ -339,9 +339,9 @@ console.groupEnd();
 
 let a18 = [
     3,
-    [0, 1, 2],
-    [8],
-    [0, 1, 2],
+    [],
+    [0,12],
+    [],
     [8],
 ];
 

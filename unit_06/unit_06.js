@@ -31,7 +31,7 @@ document.querySelector('.b-1').onclick = t1;
 function t2() {
 	let elem = document.querySelector('.out-2');
 	let out = ''
-	for (let i = 0; i < 3; i++) {
+	for (let i = 1; i <= 3; i++) {
 		out += `${i}<br>`;
 		for (let k = 0; k < 3; k++) {
 			out += `*_`;
@@ -97,7 +97,7 @@ function t5() {
 	let elem = document.querySelector('.out-5');
 	let out = '';
 	for (let i = 0; i < 3; i++) {
-		for (let k = 0; k <= 6; k++) {
+		for (let k = 0; k <= 5; k++) {
 			if (k % 2 === 0) {
 				out += `1`;
 			} else {

@@ -60,7 +60,7 @@ document.querySelector('.b-4').onclick = f4;
 
 function f5() {
     let elem = document.querySelector('.i-5').value;
-    d1.push(elem);
+    d1.unshift(elem);
     showArr('.out-5', d1);
 }
 
@@ -94,13 +94,14 @@ let newArr = [];
 function f7() {
     // d7.length = d7.length -1;
     // let i = 0;
+    // let dNew = [];
     // while (i < d7.length - 1) {
     //     dNew.push(d7[i]);
     //     i++;
     // }
     // d7 = dNew;
-    // d7.splice(d7.length-1)
-    let testArr = d7.slice(d7[0], d7.length - 1);
+    // d7.splice(-1)
+    let testArr = d7.slice(0, -1);
     d7 = testArr;
     showArr('.out-7', d7);
 
@@ -286,7 +287,7 @@ let d162 = [23, 24, 56, 87];
 
 function f16() {
     d16 = [];
-    d16.push(d161.concat(d162));
+    d16 = d16.concat(d161, d162);
     showArr('.out-16', d16);
 }
 
@@ -312,7 +313,7 @@ function f17() {
     for (let k = 0; k < d172.length; k++) {
         d17.push(d172[k]);
     }
-
+    
     showArr('.out-17', d17);
 }
 

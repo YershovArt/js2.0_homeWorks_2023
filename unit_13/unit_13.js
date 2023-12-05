@@ -10,6 +10,7 @@ function f1() {
     };
     document.querySelector('.out-1').innerHTML = a1.two;
     //return ...
+    return a1.two;
 }
 
 document.querySelector('.b-1').onclick = f1;
@@ -49,8 +50,14 @@ function f3() {
         "odd": "hi",
         "mix": "mix"
     };
+    let out = '';
+    for (const key in a3) {
+        if(a3[key] === 'hi') {
+            out += a3[key] + ' ';
+        }
+    }
     // return
-    return a3['five'];
+    return out;
 }
 
 document.querySelector('.b-3').onclick = () => {
@@ -74,9 +81,8 @@ let a4 = {
 function f4() {
     let out = '';
     for (const key in a4) {
-        out += `${key} ${a4[key]}<br>`
+        out += `${key} ${a4[key]} <br>`
     }
-    console.log(out);
     return out;
 }
 
@@ -189,7 +195,7 @@ function f9() {
     let out = '';
     for (const key in a9) {
         if (a9[key] == name) {
-            out += `${a9[key]} `;
+            out += `${key} `;
         }
     }
     document.querySelector('.out-9').textContent = out;
@@ -360,7 +366,7 @@ function f16() {
     let elem = document.querySelector('.out-16');
     let out = '';
     for (const key in a16) {
-        out += `${a16[key]['name']} `;
+        out += `${a16[key]["name"]} `;
     }
     elem.textContent = out;
 }

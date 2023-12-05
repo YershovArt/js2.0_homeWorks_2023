@@ -139,7 +139,7 @@ document.querySelector('.b-9').onclick = () => {
 // При нажатии b-10 выполняете функцию f10. Функция должна принимать набор set в качестве параметра и выводить его в указанный элемент. Элемент указывается как второй параметр функции f10. Вывод значений - через пробел.
 
 const f10 = (out_set, elem) => {
-    let out = ''
+    let out = '';
     for (const iterator of out_set) {
         out += `${iterator} `;
     }
@@ -189,11 +189,19 @@ document.querySelector('.b-12').onclick = () => {
 
 let str13 = 'abbat pro';
 
-
 const f13 = () => {
-
-    // return
+    let res = {};
+    let setObj = new Set(str13);
+    for (const i of setObj) {
+        let count = 0;
+        for (let k = 0; k < str13.length; k++) {
+            if (i === str13[k]) count++;
+        }
+        res[i] = count;
+    }
+    return res;
 }
+
 
 document.querySelector('.b-13').onclick = () => {
     console.log(f13());

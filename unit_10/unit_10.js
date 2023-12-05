@@ -35,7 +35,7 @@ document.querySelector('.b-2').onclick = f2;
 // let ar3 =  // переменную обьявляем здесь!!!!
 let ar3 = [1, true, 'hi', 31, false, 'taurus'];
 function f3() {
-    
+
     document.querySelector('.out-3').innerHTML = ar3.length;
 }
 
@@ -152,22 +152,10 @@ function f8() {
     let i = 0;
     let elem = document.querySelector('.out-8');
     let elemTwo = document.querySelector('.out-8-1');
-    let out = '';
-
-    while (i < 10) {
-        if (i === 3) {
-            ar8[i] = 3.14;
-        } else if (i === 4) {
-            ar8[i] = 17;
-        } else if (i === 6) {
-            ar8[i] = 5;
-        } else {
-            ar8[i] = i;
-        }
-        out += `${ar8[i]}-`
-        i++;
-    }
-    elem.textContent = out;
+    ar8[3] = 3.14;
+    ar8[4] = 17;
+    ar8[6] = 5;
+    elem.innerHTML = ar8.join('-');
     elemTwo.textContent = ar8.length;
 }
 
@@ -269,7 +257,7 @@ function f13() {
     let out = '';
     let i = 0;
     while (i < ar13.length) {
-        out += ` ${i} ${ar13[i]} `;
+        out += `${i} ${ar13[i]} `;
         i++;
     }
     elem.textContent = out;
@@ -430,7 +418,7 @@ function f19() {
         }
         i++;
     }
-    elem.textContent = min;
+    elem.textContent = ar19.indexOf(min);
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -448,9 +436,9 @@ function f20() {
     let i = 0;
     let sum = 0;
     while (i < ar20.length) {
-        
-            sum += ar20[i];
-        
+
+        sum += ar20[i];
+
         i++;
     }
     elem.textContent = sum;
