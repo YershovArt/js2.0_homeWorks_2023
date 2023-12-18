@@ -26,10 +26,10 @@ function createSelect() {
 		select.append(option);
 	}
 
-	select.classList.add('form-select', 'form-select-lg', 'p-4', 'text-center',  'text-uppercase', 'fs-3');
+	select.classList.add('form-select', 'text-center', 'text-uppercase');
 	select.setAttribute('id', 'city');
 	select.setAttribute('name', 'cityId');
-	document.querySelector('.container__inner').append(select)
+	document.querySelector('.weather-info').prepend(select)
 	select.addEventListener('change', getWeather);
 	getWeather()
 }
@@ -38,10 +38,12 @@ createSelect()
 
 function getWeather() {
 	const cityId = document.querySelector('#city').value;
+	console.log(`${param.url}weather?id=${cityId}&units=metric&APPID=${param.appid}`);
 	fetch(`${param.url}weather?id=${cityId}&units=metric&APPID=${param.appid}`)
 		.then(weather => {
 			return weather.json();
 		}).then(showWeather);
+
 }
 
 getWeather();
@@ -49,7 +51,7 @@ getWeather();
 function showWeather(data) {
 	console.log(data);
 	document.querySelector('.weather-info__city').textContent = data.name;
-	document.querySelector('.weather-info__temp').innerHTML ='Temperature: ' + Math.round(data.main.temp) + '&deg;C';
+	document.querySelector('.weather-info__temp').innerHTML = 'Temperature: ' + Math.round(data.main.temp) + '&deg;C';
 	document.querySelector('.weather-info__image').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png">`;
 	document.querySelector('.weather-info__description').textContent = data.weather[0]['description'];
 	document.querySelector('.weather-info__wind').innerHTML = 'wind direction: ' + data.wind['deg'] + '&deg;';
