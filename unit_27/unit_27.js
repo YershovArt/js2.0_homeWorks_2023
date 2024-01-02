@@ -36,7 +36,7 @@ function rejectError(err) {
 function resolveF1(data) {
     console.log(data);
     let out = data['random-number'] > 50 ? true : false;
-    document.querySelector('.out-2').textContent = out;
+    document.querySelector('.out-1').textContent = out;
     // тут допишите необходимый вывод 
 }
 

@@ -16,7 +16,7 @@ console.log(s1);
 
 
 let s2 = new Set();
-
+    
 const f2 = () => {
     s2.add(document.querySelector('.i-2').value);
     console.log(s2);
